@@ -1,2 +1,3 @@
 # GoFo
-Build system to reverse playgrounds online
+Build system to reserve playgrounds online
+
