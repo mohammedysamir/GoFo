@@ -67,7 +67,7 @@ ArrayList<String>BookedHours=new ArrayList<String>();
 	 System.out.println("IT is Canceled");
  }
  /**
-  * to view book hourse in playground
+  * to view book hours in playground
   * */
 public void ViewBookedHourse()
 {

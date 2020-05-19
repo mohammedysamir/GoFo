@@ -69,6 +69,7 @@ public class system {
 	 * Add Playground to the system
 	 * */
 	public void Addplayground(PlayGround p) {//Add Playground to arraylist
+		Admins.get(0).Verify(p);		//Verify playground 
 		Playgrounds.add(p);
 		System.out.println("Playground is Added");
 	}
