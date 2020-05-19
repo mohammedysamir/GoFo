@@ -1,1 +1,1 @@
-typeSearchIndex = [{"p":"project","l":"Admin"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"project","l":"UserState"}]
+typeSearchIndex = [{"p":"project","l":"Admin"},{"l":"All Classes","url":"allclasses-index.html"},{"p":"project","l":"eWallet"},{"p":"project","l":"Main"},{"p":"project","l":"PGState"},{"p":"project","l":"Player"},{"p":"project","l":"PlayGround"},{"p":"project","l":"PlaygroundOwner"},{"p":"project","l":"system"},{"p":"project","l":"User"},{"p":"project","l":"UserState"}]
