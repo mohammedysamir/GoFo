@@ -1,5 +1,6 @@
-package project;
-
+package  project;
+/**
+ * @author Mariem*/
 public enum PGState {
-    Active,Suspended,Deleted,Pending 
-  }
+	  Active,Suspended,Deleted,Pending 
+	}
