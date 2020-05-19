@@ -22,7 +22,7 @@ ArrayList<String>BookedHours=new ArrayList<String>();
   * @param location:playground location
   * @param size:palyground size
   * @param rentplace:playground rent
-  * @param ownerid: playground ownerid
+  * @param OwnerID: playground ownerid
   * @param periodtocancel:playground period to cancel
   * 
   * */
@@ -39,7 +39,8 @@ ArrayList<String>BookedHours=new ArrayList<String>();
 	  }
  /**
   * book time in this playground
-  * @param time:to book time in playground*/
+  * @param time:to book time in playground
+  * @return return true if the player book*/
  public boolean Book(String time)
  {
      boolean check=false;             //to check if this time was added before
@@ -76,15 +77,18 @@ public void ViewBookedHourse()
 	}
 }
 /**
- * to get name of  playground */
+ * to get name of  playground
+ * @return Name */
 public String getName() {return Name;}
 /**
- * to get the rent of playground from users*/
+ * to get the rent of playground from users
+ * @return rentplace*/
 public int getrent()
 {
 	return rentplace;}
 /**
  * to get the Owner ID
+ * @return OwnerID
  * */
 public long getOwnerID()
 {

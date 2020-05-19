@@ -7,7 +7,15 @@ public class Player extends User {
 
 ArrayList<Player> Team=new ArrayList<Player>();
 ArrayList<String> BookingList=new ArrayList<String>();
-/**Constructor*/
+/**Constructor
+ * 
+ * @param f = First Name of User
+ * @param l=Last Name of User
+ * @param e=Email of User
+ * @param p=Password of User
+ * @param Ph=Phone number of User
+ * @param I =ID of User
+ * @param r=Role (Player,PlaygroundOwner)*/
 public Player(String f, String l, String e, String p,String Ph, long I, String r) {
 	super(f, l, e, p,Ph,I, r);
 }
@@ -42,11 +50,23 @@ public void Book(String PGName,String Time,system s) {
 	//Book this playground
 	if(pg.Book(Time)) {
 		//Determine how many hours
-		int Hours;
+		int index=0;
+		for(int i=0;i<Time.length();i++) {
+			if(Time.charAt(i)==':') {
+				index=Time.charAt(i);
+			}
+		}
+		if(index ==0)System.out.println("Invalid time syntax");
+		String from=String.valueOf(Time.charAt(index-1));		//convert char to string
+		String to=String.valueOf(Time.charAt(index+1));			//convert char to string
+		int Hours=Integer.parseInt(to)-Integer.parseInt(from); //Get number of Hours
+		int RentValue=Hours*pg.getrent();				//Get Price to pay
 		//withdraw money
-		Wallet.Withdraw(pg.getrent());
-	//s.FindOwner(pg.getOwnerID(),);
+		Wallet.Withdraw(RentValue);			//withdraw from Player
 		//Deposit in PlaygroundOwner Wallet
+		
+		//s.FindOwner(pg.getOwnerID(),RentValue);		//Deposit to Owner
+		
 		//add to Booking arraylist
 		BookingList.add(Time);
 	}

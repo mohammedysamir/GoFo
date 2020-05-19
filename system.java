@@ -24,7 +24,7 @@ public class system {
 		if(checker==false) {
 		Players.add(p);
 		System.out.println("Player is Added"); }
-		//p.State=UserState.Approved;
+		Approve(p);
 		
 	} 
 	 /**
@@ -85,8 +85,8 @@ public class system {
 				}
 			}
 	}
-	//public void Approve(Player p) {p.State=UserState.Approved;}
-	//public void Approve(PlaygroundOwner o) {o.State=UserState.Approved;}
+	public void Approve(Player p) {p.State=UserState.Approved;}
+	public void Approve(PlaygroundOwner o) {o.State=UserState.Approved;}
 	/**
 	 * @param p:PlayGround object
 	 * Approve PlayGround and change its state to Active*/
@@ -105,7 +105,7 @@ public class system {
 		if(checker==false) {
 		Owners.add(o);
 		System.out.println("Owner is Added"); }
-		//p.State=UserState.Approved;
+		Approve(o);
 	} 
 	/**
 	 * @param o: PlaygroundOwner object
@@ -128,7 +128,8 @@ public class system {
 		}
 	/**
 	 * @param Name: Name of PlayGround+
-	 * Find specific PlayGround by its name*/
+	 * Find specific PlayGround by its name
+	 * return PlayGround*/
 	public PlayGround FindPlayground(String Name) {
 		boolean check=false;
 		for(int i=0;i<Playgrounds.size();i++) {
@@ -142,7 +143,9 @@ public class system {
 	}
 	/**
 	 * @param id:Owner ID
-	 * Find Owner with specific id*/
+	 * @param amount :amount to be paid
+	 * Find Owner with specific id
+	 * */
 	public void FindOwner(long id, float amount) {
 		boolean checker=false;		//check if we found Owner
 		for(int i=0;i<Owners.size();i++) {//find Owner

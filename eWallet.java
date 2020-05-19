@@ -10,6 +10,7 @@ public class eWallet {
 		Balance=amt;
 	}
 	/**
+	 * @return Balance
 	 *to get the balance of the user*/
 	public float getBalance()
 	{
