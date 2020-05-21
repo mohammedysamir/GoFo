@@ -3,10 +3,10 @@ package project;
  * @author Mariem*/
 public class eWallet {
 	float Balance;
+	public eWallet() {Balance=200.0f;}
 	/**
 	 * to set the balance  of the user to book the playground
 	 * @param amt:the palyground have the rent from the user*/
-	public eWallet() {Balance=200.0f;}
 	public void setBalance(float amt) {
 		Balance=amt;
 	}
@@ -19,15 +19,17 @@ public class eWallet {
 	}
 	/**
 	 * the user want to withdrow his money to pay to book the palyground
-	 * @param amt:the amount that user want to book the playground*/
-public void Withdraw(float amt)
+	 * @param amt:the amount that user want to book the playground
+	 * @return True if amount is less than or equal to balance*/
+public boolean Withdraw(float amt)
 {if(amt>Balance) {
-    System.out.println("not enough balance");
+   // System.out.println("not enough balance");
+    return false;
 }
 else {
     Balance=Balance-amt;
-System.out.println(Balance);}
-	
+System.out.println("Current Balance: "+Balance);}
+	return true;
 	}
 /**
  * to deposite the balance of user

@@ -47,30 +47,26 @@ public void Book(String PGName,String Time,system s) {
 	//Access playground and book
 	PlayGround pg=s.FindPlayground(PGName);
 	//Book this playground
-	if(pg.Book(Time)) {
-		//Determine how many hours
-		int index=0;
-		for(int i=0;i<Time.length();i++) {
-			if(Time.charAt(i)==':') {
-				index=i;
-			}
+	int index=0;
+	for(int i=0;i<Time.length();i++) {
+		if(Time.charAt(i)==':') {
+			index=i;
 		}
-		if(index ==0)System.out.println("Invalid time syntax");
-		String from=String.valueOf(Time.charAt(index-1));		//convert char to string
-		String to=String.valueOf(Time.charAt(index+1));			//convert char to string
-		int Hours=Integer.parseInt(to)-Integer.parseInt(from); //Get number of Hours
-		int RentValue=Hours*pg.getrent();				//Get Price to pay
-		//withdraw money
-		Wallet.Withdraw(RentValue);			//withdraw from Player
-		//Deposit in PlaygroundOwner Wallet
-		
+	}
+	if(index ==0)System.out.println("Invalid time syntax");
+	String from=String.valueOf(Time.charAt(index-1));		//convert char to string
+	String to=String.valueOf(Time.charAt(index+1));			//convert char to string
+	//Determine how many hours
+	int Hours=Integer.parseInt(to)-Integer.parseInt(from); //Get number of Hours
+	int RentValue=Hours*pg.getrent();				//Get Price to pay
+	//withdraw money
+	if(Wallet.Withdraw(RentValue)&&pg.Book(Time)) {
 		s.FindOwner(pg.getOwnerID(),RentValue);		//Deposit to Owner
-		
 		//add to Booking arraylist
 		BookingList.add(Time);
 	}
 	else {
-		System.out.println("You cant reserve this time");
+		System.out.println("You cant reserve this time or not enough balance");
 	}
 	
 }

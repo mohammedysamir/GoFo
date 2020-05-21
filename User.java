@@ -42,5 +42,7 @@ public long getID() {
 public 	float checkbalance() {
 	return Wallet.getBalance();
 		}
-
+/*Change Here*/
+public String GetEmail() {return Email;}
+public String GetPass() {return Password;}
 }

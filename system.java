@@ -23,6 +23,7 @@ public class system {
 		}
 		if(checker==false) {
 		Players.add(p);
+		
 		System.out.println("Player is Added"); }
 		Approve(p);
 		
@@ -71,7 +72,6 @@ public class system {
 	 * Add Playground to the system
 	 * */
 	public void Addplayground(PlayGround p) {//Add Playground to arraylist
-		System.out.println("In the system");
 		Admins.get(0).Verify(p);		//Verify playground 
 		Playgrounds.add(p);
 	}
@@ -88,7 +88,13 @@ public class system {
 				}
 			}
 	}
+	/**
+	 * Approve Player
+	 * @param p:Player object*/
 	public void Approve(Player p) {p.State=UserState.Approved;}
+	/**
+	 * Approve Owner
+	 * @param o: PlaygroundOwner object*/
 	public void Approve(PlaygroundOwner o) {o.State=UserState.Approved;}
 	/**
 	 * @param p:PlayGround object
@@ -161,5 +167,64 @@ public class system {
 		if(checker==false)
 			System.out.println("Owner Not Found");
 		
+	}
+	/**
+	 * Search for user in the DataBase
+	 * @param e:Email of User
+	 * @param p:Password of User
+	 * @return String of Role*/
+	public String SearchinDB(String e,String p) { //return Role
+		for(int i=0;i<Owners.size();i++) { //search for owner
+			if(Owners.get(i).GetEmail().equalsIgnoreCase(e)&&Owners.get(i).GetPass().equalsIgnoreCase(p)) {
+				return "playgroundOwner";
+			}
+		}
+		for(int i=0;i<Players.size();i++) { //search for owner
+			if(Players.get(i).GetEmail().equalsIgnoreCase(e)&&Players.get(i).GetPass().equalsIgnoreCase(p)) {
+				return "player";
+			}
+		}
+		return "this email doesn't exist in our system";
+	}
+	/**
+	 *
+	 * @param e:Email of User
+	 * @param p:Password of User
+	 * @return PlaygroundOwner object*/
+	public PlaygroundOwner Owner(String e,String p) {	//return PlayergroundOwner object with email and pass
+		for(int i=0;i<Owners.size();i++) { //search for owner
+			if(Owners.get(i).GetEmail().equalsIgnoreCase(e)&&Owners.get(i).GetPass().equalsIgnoreCase(p)) {
+				return Owners.get(i);
+			}
+		}
+		return null;
+	}
+	/**
+	 *
+	 * @param e:Email of User
+	 * @param p:Password of User
+	 * @return Player object*/
+	public Player player(String e,String p) { //return Player  object with email and pass
+		for(int i=0;i<Players.size();i++) { //search for Player
+			
+			if(Players.get(i).GetEmail().equalsIgnoreCase(e)&&Players.get(i).GetPass().equalsIgnoreCase(p)) {
+				return Players.get(i);
+			}
+		}
+		return null;
+	}
+	/**
+	 * Return Player object
+	 * @param e:Email of User
+	 * @return Player object
+	 * */
+	public Player player(String e) { //return Player  object with email 
+		for(int i=0;i<Players.size();i++) { //search for Player to add by email
+			
+			if(Players.get(i).GetEmail().equalsIgnoreCase(e)) {
+				return Players.get(i);
+			}
+		}
+		return null;
 	}
 }
