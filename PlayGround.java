@@ -35,6 +35,7 @@ ArrayList<String>BookedHours=new ArrayList<String>();
 	 this.size=size;
 	 this.OwnerID=OwnerID;
 	 this.periodtocancel=periodtocancel;
+	 this.rentplace=rentplace;
 	 playgroundstate=PGState.Pending;
 	  }
  /**
@@ -71,6 +72,7 @@ ArrayList<String>BookedHours=new ArrayList<String>();
   * */
 public void ViewBookedHourse()
 {
+	if(BookedHours.size()==0) {System.out.println("There are no Booked Hours.");}
 	for(int i=0;i<BookedHours.size();i++)
 	{
 		System.out.println(BookedHours.get(i));

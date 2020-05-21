@@ -6,6 +6,7 @@ public class eWallet {
 	/**
 	 * to set the balance  of the user to book the playground
 	 * @param amt:the palyground have the rent from the user*/
+	public eWallet() {Balance=200.0f;}
 	public void setBalance(float amt) {
 		Balance=amt;
 	}

@@ -4,7 +4,15 @@ public class Admin {
 	String Name;
 	system S;
 	/**
-	*@param PlayGround : used to create object from playground 
+	 * Constructor
+	 * @param n:Name
+	 * @param sys: System of the admin*/
+	public Admin(String n,system sys) {
+		Name=n;
+		S=sys;
+	}
+	/**
+	*@param pg : used to create object from playground 
 	*this function is used to change the state of playground from suspended or from pending to Activate
 	*/
 	public void Active(PlayGround pg){
@@ -21,7 +29,7 @@ public class Admin {
 }
 
 	/**
-	@param PlayGround : used to create object from playground 
+	@param pg : used to create object from playground 
 	this function is used to change the state of the playgound to suspended when it breaks the rules
 	*/
 
@@ -30,7 +38,7 @@ public class Admin {
 	System.out.println("Playgound is Suspended");}
 
 	/**
-	@param PlayGround : used to create object from playground 
+	@param pg : used to create object from playground 
 	this function is used to delet the playgorund from the system when it is not avilable
 	*/
 
@@ -41,7 +49,7 @@ public class Admin {
 	}
 
 	/**
-	@param PlayGround : used to create object from playground 
+	@param pg : used to create object from playground 
 	this function is use to change the state of the playgorund from  pending to Verfyied(Activated)
 
 	*/

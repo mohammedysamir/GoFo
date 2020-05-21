@@ -11,7 +11,7 @@ String Email;
 String Phone;
 String Password;
 long ID;
-eWallet Wallet;
+eWallet Wallet=new eWallet();
 String Role;
 UserState State;
 /** 

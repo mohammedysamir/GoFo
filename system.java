@@ -44,6 +44,7 @@ public class system {
 	  * View all players in the system 
 	  * */
 	public void ViewPlayers() {	//Loop through Users
+		if(Players.size()==0)System.out.println("No Players in this system.");
 		for(int i=0;i<Players.size();i++) {
 			System.out.println(Players.get(i).toString());
 			}
@@ -52,6 +53,7 @@ public class system {
 	  * View all playgrounds in the system 
 	  * */
 	public void ViewPlaygrounds() { //Loop through Playgrounds
+		if(Playgrounds.size()==0)System.out.println("No Playgrounds in this system.");
 		for(int i=0;i<Playgrounds.size();i++) {
 			System.out.println(Playgrounds.get(i));
 			}
@@ -62,16 +64,16 @@ public class system {
 	 * */
 	public void AddAdmin(Admin a) {		//Add admin to arraylist
 		Admins.add(a);
-		System.out.println("Admin Added");
+		//System.out.println("Admin Added");
 		}
 	/**
 	 * @param p: Playground object
 	 * Add Playground to the system
 	 * */
 	public void Addplayground(PlayGround p) {//Add Playground to arraylist
+		System.out.println("In the system");
 		Admins.get(0).Verify(p);		//Verify playground 
 		Playgrounds.add(p);
-		System.out.println("Playground is Added");
 	}
 	/**
 	 * @param p: Playground object
@@ -123,6 +125,7 @@ public class system {
 	/**
 	 * View all owners in the system*/
 	public void ViewOwners() {	//Loop through Owners
+		if(Owners.size()==0)System.out.println("No Playground Owners in this system.");
 		for(int i=0;i<Owners.size();i++) {
 			System.out.println(Owners.get(i));
 			}
@@ -130,10 +133,10 @@ public class system {
 	/**
 	 * @param Name: Name of PlayGround+
 	 * Find specific PlayGround by its name
-	 * return PlayGround*/
+	 * @return PlayGround object*/
 	public PlayGround FindPlayground(String Name) {
 		boolean check=false;
-		for(int i=0;i<Playgrounds.size();i++) {
+		for(int i=0;i<Playgrounds.size();i++){
 			if(Playgrounds.get(i).getName()==Name)
 				check=true;
 				return Playgrounds.get(i);

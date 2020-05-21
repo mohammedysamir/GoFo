@@ -21,6 +21,7 @@ public class PlaygroundOwner extends User {
 /**
  * View Booked Hours for all playground belongs to this Owner*/
 	public void ViewBookedHours() {
+		if(Playgrounds.size()==0) {System.out.println("No registed playgrounds yet.");}
 		for(int i=0;i<Playgrounds.size();i++) {
 			Playgrounds.get(i).ViewBookedHourse();
 		}
@@ -28,7 +29,7 @@ public class PlaygroundOwner extends User {
 	/**@param amount: amount to be deposit
 	 * To deposit amount of money into Owner's Wallet*/
 	public void Deposit(float amount)
-	{Wallet.Deposite(amount);}
+	{	Wallet.Deposite(amount);}
 	/**
 	 * @param sys: initialize system for Owner
 	 * To initialize to specific Owner
@@ -38,6 +39,7 @@ public class PlaygroundOwner extends User {
 	 * To register playground
 	 * */
 	public void RegisterPlayground(PlayGround pg) {
+		Playgrounds.add(pg);
 		S.Addplayground(pg);
 		System.out.println("Playground has been added");
 	}

@@ -37,7 +37,6 @@ public void Addmember(Player p) {
 		System.out.println("member is added");
 		}
 	}
-//change here
 /**
  * @param PGName : PlayGround Name
  * @param Time: Hour slot(s) to reserve
@@ -53,7 +52,7 @@ public void Book(String PGName,String Time,system s) {
 		int index=0;
 		for(int i=0;i<Time.length();i++) {
 			if(Time.charAt(i)==':') {
-				index=Time.charAt(i);
+				index=i;
 			}
 		}
 		if(index ==0)System.out.println("Invalid time syntax");
@@ -65,7 +64,7 @@ public void Book(String PGName,String Time,system s) {
 		Wallet.Withdraw(RentValue);			//withdraw from Player
 		//Deposit in PlaygroundOwner Wallet
 		
-		//s.FindOwner(pg.getOwnerID(),RentValue);		//Deposit to Owner
+		s.FindOwner(pg.getOwnerID(),RentValue);		//Deposit to Owner
 		
 		//add to Booking arraylist
 		BookingList.add(Time);
@@ -89,6 +88,6 @@ public void ViewBookedHours(String PGName,system s) {
 /**
  * Override to toString function to show player's info*/
 public String toString() { 
-    return String.format("Player name:"+FirstName+" "+LastName+" Email:"+Email+" Phone:"+Phone+" ID:"+ID); 
+    return String.format(" Player name:"+FirstName+" "+LastName+"\n"+" Email:"+Email+"\n"+" Phone:"+Phone+"\n"+" ID:"+ID); 
 } 
 }
